@@ -5,6 +5,7 @@ import App from './App'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/Home'
 import AllProduct from './components/Cards/AllProduct'
+import SavedCart from './components/cartIcon/SavedCart'
 
 const router=createBrowserRouter([{
     path:"/",
@@ -18,7 +19,12 @@ const router=createBrowserRouter([{
             path:'/shop',
             element:<AllProduct></AllProduct>,
             loader:()=>fetch('products.json')
-        }
+        },
+        {
+            path:'/cart',
+            element:<SavedCart></SavedCart>,
+
+        },
     ]
 
 }])
